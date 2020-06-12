@@ -2,13 +2,16 @@ using System;
 
 public class SpaceAge
 {
+    private int Seconds;
     public SpaceAge(int seconds)
     {
+        Seconds = seconds;
     }
 
     public double OnEarth()
     {
-        throw new NotImplementedException("You need to implement this function.");
+        double earthAge = Seconds / 31557600.0;
+        return earthAge;
     }
 
     public double OnMercury()
