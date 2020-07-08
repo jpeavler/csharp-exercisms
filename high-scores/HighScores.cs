@@ -18,7 +18,7 @@ public class HighScores
 
     public int Latest()
     {
-        throw new NotImplementedException();
+        return highScoresList[highScoresList.Count -1];
     }
 
     public int PersonalBest()
@@ -32,6 +32,10 @@ public class HighScores
 
     public List<int> PersonalTopThree()
     {
-        throw new NotImplementedException();
+        List<int> topThree = highScoresList.OrderByDescending(x => x).ToList();
+        if(topThree.Count > 3) {
+        topThree.RemoveRange(3, topThree.Count() -3);
+        }
+        return topThree;
     }
 }
