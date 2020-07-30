@@ -11,7 +11,7 @@ public class Robot
         string num1 = random.Next(10).ToString();
         string num2 = random.Next(10).ToString();
         string num3 = random.Next(10).ToString();
-        robotName = "AE123";
+        robotName = string.Concat(letter1, letter2, num1, num2, num3);
     }
     public string Name
     {
