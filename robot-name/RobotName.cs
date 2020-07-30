@@ -1,28 +1,25 @@
 using System;
 
-public class Robot
-{
-    private string robotName;
-    private string ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    public Robot() {
+public class Robot {
+    private string generateName () {
         var random = new Random();
         string letter1 = ALPHABET[random.Next(26)].ToString();
         string letter2 = ALPHABET[random.Next(26)].ToString();
         string num1 = random.Next(10).ToString();
         string num2 = random.Next(10).ToString();
         string num3 = random.Next(10).ToString();
-        robotName = string.Concat(letter1, letter2, num1, num2, num3);
+        return string.Concat(letter1, letter2, num1, num2, num3);
     }
-    public string Name
-    {
-        get
-        {
-            return robotName;
-        }
+    private string robotName;
+    private string ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    public Robot() {
+        robotName = generateName();
+    }
+    public string Name {
+        get { return robotName; }
     }
 
-    public void Reset()
-    {
-        throw new NotImplementedException("You need to implement this function.");
+    public void Reset() {
+        robotName = generateName();
     }
 }
